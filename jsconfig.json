@@ -4,10 +4,16 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
+<<<<<<< HEAD
+    }
+  },
+  "exclude": ["node_modules", ".next", "out"]
+=======
     },
     "jsx": "preserve"
   },
   "exclude": ["node_modules", ".next"]
+>>>>>>> main
 =======
     "baseUrl": "."
   }
