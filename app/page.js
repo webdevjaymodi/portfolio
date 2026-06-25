@@ -9,6 +9,7 @@ import ProjectsSection from '../components/ProjectsSection';
 import ServicesSection from '../components/ServicesSection';
 import ScrollProgress from '../components/ScrollProgress';
 import SkillsSection from '../components/SkillsSection';
+import MagicalExperience from '../components/MagicalExperience';
 
 function Divider() {
   return <hr />;
@@ -17,6 +18,7 @@ function Divider() {
 export default function Home() {
   return (
     <>
+      <MagicalExperience />
       <ScrollProgress />
       <Header />
       <main>
