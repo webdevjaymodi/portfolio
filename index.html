@@ -60,7 +60,7 @@
               loading="lazy"
           /></a>
         </div>
-        <ul class="nav-links">
+        <ul class="nav-links" id="primary-navigation">
           <li><a href="#home">Home</a></li>
           <li><a href="#aboutme">About</a></li>
           <li><a href="#service">Services</a></li>
@@ -74,7 +74,15 @@
         >
           🌙
         </button>
-        <div class="menu-btn" role="button" aria-label="Open Menu">&#9776;</div>
+        <button
+          class="menu-btn"
+          type="button"
+          aria-label="Open Menu"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          &#9776;
+        </button>
       </nav>
     </header>
 
@@ -91,12 +99,14 @@
               <a
                 href="https://github.com/jaymodi993"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="GitHub Profile"
                 >Visit Github</a
               >
               <a
                 href="https://drive.google.com/file/d/1vEZaegPyb2rUV_1pmDj2_KbG1LLEnEmo/view?usp=sharing"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Download Resume"
                 >Download CV</a
               >
@@ -244,6 +254,32 @@
 
       <hr />
 
+      <section id="project" data-aos="fade-up">
+        <p class="section-title">What I Built</p>
+        <h2 class="section-heading">Projects</h2>
+        <div class="project-content">
+          <article
+            class="project-item"
+            data-aos="zoom-in-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="img/project-placeholder.png"
+              alt="Hospital Management System project preview"
+              loading="lazy"
+            />
+            <div class="project-details">
+              <h3>Hospital Management System</h3>
+              <p>
+                A college project focused on managing patient, doctor, and
+                appointment workflows with a clear administrative interface.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <hr />
       <section id="contact" data-aos="fade-up">
         <p class="section-title">Get In Touch</p>
         <h2 class="section-heading">Contact</h2>
@@ -282,6 +318,7 @@
               id="msg"
               placeholder="Message"
               aria-label="Message"
+              required
             ></textarea>
             <button type="submit">Send Message</button>
           </form>
@@ -323,26 +360,31 @@
               <a
                 href="https://www.linkedin.com/in/jay-modi-60965519a/"
                 target="_blank"
+                rel="noopener noreferrer"
                 ><i class="fa-brands fa-linkedin"></i> Linkedin</a
               >
             </li>
             <li>
               <a href="https://twitter.com/jaymodi993" target="_blank"
+                rel="noopener noreferrer"
                 ><i class="fa-brands fa-x-twitter"></i> Twitter</a
               >
             </li>
             <li>
               <a href="https://github.com/jaymodi993" target="_blank"
+                rel="noopener noreferrer"
                 ><i class="fa-brands fa-github"></i> Github</a
               >
             </li>
             <li>
               <a href="https://wa.me/+918490093530" target="_blank"
+                rel="noopener noreferrer"
                 ><i class="fa-brands fa-whatsapp"></i> Whatsapp</a
               >
             </li>
             <li>
               <a href="https://www.instagram.com/jaymodi993/" target="_blank"
+                rel="noopener noreferrer"
                 ><i class="fa-brands fa-instagram"></i> Instagram</a
               >
             </li>
@@ -360,8 +402,6 @@
       src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"
       defer
     ></script>
-    <script src="https://smtpjs.com/v3/smtp.js" defer></script>
-
     <!-- Custom JS -->
     <script src="app.js" defer></script>
   </body>

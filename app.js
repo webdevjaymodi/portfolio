@@ -10,14 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // --- 2. Mobile Menu Logic ---
     if (menuBtn && navLinks) {
         menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuBtn.classList.toggle('active');
+            const isOpen = navLinks.classList.toggle('active');
+            menuBtn.classList.toggle('active', isOpen);
+            menuBtn.setAttribute('aria-expanded', String(isOpen));
         });
 
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 menuBtn.classList.remove('active');
+                menuBtn.setAttribute('aria-expanded', 'false');
             });
         });
     }
@@ -70,13 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    function hideProgress() {
-        progressBars.forEach(p => {
-            p.style.width = 0;
-            p.style.opacity = 0;
-        });
-    }
-
     // Use Intersection Observer to detect when skills are visible
     if(skillSection){
         const observer = new IntersectionObserver((entries) => {
@@ -92,7 +87,33 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(skillSection);
     }
 
-    // --- 6. AOS Animation ---
+    // --- 6. Contact Form ---
+    window.sendEmail = function sendEmail(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('em').value.trim();
+        const subject = document.getElementById('su').value.trim() || 'Portfolio inquiry';
+        const message = document.getElementById('msg').value.trim();
+
+        if (!name || !email || !message) {
+            alert('Please fill in your name, email, and message before sending.');
+            return;
+        }
+
+        const bodyLines = [
+            `Name: ${name}`,
+            `Email: ${email}`,
+            '',
+            message,
+        ];
+        const mailtoUrl = `mailto:jaymodi993@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+
+        window.location.href = mailtoUrl;
+        event.target.reset();
+    };
+
+    // --- 7. AOS Animation ---
     if (typeof AOS !== 'undefined') {
         AOS.init({
             duration: 1000,

@@ -1,30 +1,22 @@
-var typed = new Typed("#element", {
-  strings: ["Web Developer", "Programmer", "Freelancer"],
-  typeSpeed: 100,
-  loop: true,
-  loopCount: Infinity,
-});
+// Legacy entry point kept for older deployments that may still reference this file.
+// The active site loads app.js, which contains the current navigation, theme,
+// animation, and contact-form logic.
+if (typeof window.sendEmail !== 'function') {
+  window.sendEmail = function sendEmail(event) {
+    event.preventDefault();
 
-document.addEventListener("DOMContentLoaded", function () {
-  const right = document.querySelector(".right");
-  const navbarLinks = document.querySelector(".navbar-links");
+    const name = document.getElementById('name')?.value.trim();
+    const email = document.getElementById('em')?.value.trim();
+    const subject = document.getElementById('su')?.value.trim() || 'Portfolio inquiry';
+    const message = document.getElementById('msg')?.value.trim();
 
-  right.addEventListener("click", function () {
-    navbarLinks.classList.toggle("active");
-  });
-  navbarLinks.addEventListener("click", function () {
-    navbarLinks.classList.remove("active");
-  });
-});
+    if (!name || !email || !message) {
+      alert('Please fill in your name, email, and message before sending.');
+      return;
+    }
 
-function hi() {
-  Email.send({
-    Host: "smtp.elasticemail.com",
-    Username: "lovercomic7@gmail.com",
-    Password: "6473DDD9A90E5AB3ACE74B0AB490A75125CE",
-    To: "webdev.jaymodi@gmail.com",
-    From: document.getElementById("em").value,
-    Subject: document.getElementById("su").value,
-    Body: "And this is the body",
-  }).then((message) => alert(message));
+    const body = [`Name: ${name}`, `Email: ${email}`, '', message].join('\n');
+    window.location.href = `mailto:jaymodi993@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    event.target.reset();
+  };
 }
