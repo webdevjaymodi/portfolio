@@ -8,6 +8,7 @@ export default function Hero() {
   const [typedText, setTypedText] = useState('');
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [pointer, setPointer] = useState({ x: 50, y: 50 });
 
   useEffect(() => {
     const currentWord = typedWords[wordIndex];
@@ -32,8 +33,21 @@ export default function Hero() {
     return () => window.clearTimeout(timer);
   }, [isDeleting, typedText, wordIndex]);
 
+  function trackPointer(event) {
+    const rect = event.currentTarget.getBoundingClientRect();
+    setPointer({
+      x: ((event.clientX - rect.left) / rect.width) * 100,
+      y: ((event.clientY - rect.top) / rect.height) * 100,
+    });
+  }
+
   return (
-    <section id="home" className="hero-section">
+    <section
+      id="home"
+      className="hero-section"
+      onPointerMove={trackPointer}
+      style={{ '--hero-x': `${pointer.x}%`, '--hero-y': `${pointer.y}%` }}
+    >
       <div className="home-content">
         <div className="home-text">
           <p className="hero-kicker">Software Enthusiast</p>
@@ -57,11 +71,14 @@ export default function Hero() {
           <div className="orb orb-one" />
           <div className="orb orb-two" />
           <Image src="/img/my.jpg" alt="Jay Modi - Web Developer" width={390} height={390} className="floating-img" priority />
+          <div className="tech-badge badge-one">React</div>
+          <div className="tech-badge badge-two">SQL</div>
+          <div className="tech-badge badge-three">.NET</div>
         </div>
       </div>
       <div className="stats-grid">
         {stats.map((item) => (
-          <div className="stat-card" key={item.label}>
+          <div className="stat-card interactive-card" key={item.label}>
             <strong>{item.value}</strong>
             <span>{item.label}</span>
           </div>
