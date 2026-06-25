@@ -1,48 +1,96 @@
 'use client';
 
+import { useState } from 'react';
+import { socialLinks } from '../data/portfolio';
 import SectionHeading from './SectionHeading';
 
-export default function ContactSection() {
-  function sendEmail(event) {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const name = String(formData.get('name') || '').trim();
-    const email = String(formData.get('email') || '').trim();
-    const subject = String(formData.get('subject') || '').trim() || 'Portfolio inquiry';
-    const message = String(formData.get('message') || '').trim();
+const initialStatus = { type: '', message: '' };
 
-    if (!name || !email || !message) {
-      window.alert('Please fill in your name, email, and message before sending.');
+export default function ContactSection() {
+  const [status, setStatus] = useState(initialStatus);
+  const [isSending, setIsSending] = useState(false);
+
+  async function sendEmail(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      name: String(formData.get('name') || '').trim(),
+      email: String(formData.get('email') || '').trim(),
+      subject: String(formData.get('subject') || '').trim(),
+      message: String(formData.get('message') || '').trim(),
+    };
+
+    if (!payload.name || !payload.email || !payload.message) {
+      setStatus({ type: 'error', message: 'Please fill in your name, email, and message.' });
       return;
     }
 
-    const body = [`Name: ${name}`, `Email: ${email}`, '', message].join('\n');
-    window.location.href = `mailto:jaymodi993@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    event.currentTarget.reset();
+    setIsSending(true);
+    setStatus({ type: 'info', message: 'Sending your message...' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Unable to send message.');
+      }
+
+      form.reset();
+      setStatus({ type: 'success', message: 'Thank you! Your message has been sent to Jay.' });
+    } catch (error) {
+      setStatus({
+        type: 'error',
+        message: `${error.message} You can also email me directly at jaymodi993@gmail.com.`,
+      });
+    } finally {
+      setIsSending(false);
+    }
   }
 
   return (
     <section id="contact">
-      <SectionHeading eyebrow="Get In Touch" title="Contact" />
-      <div className="contact-content">
+      <SectionHeading eyebrow="Get In Touch" title="Let's build something useful">
+        Fill the form and it will send directly to my inbox after Vercel email variables are added.
+      </SectionHeading>
+      <div className="contact-content interactive-card">
         <div className="contact-info">
-          <p>
-            <strong>Name:</strong> Jay Modi
-          </p>
-          <p>
-            <strong>Email:</strong> <a href="mailto:jaymodi993@gmail.com">jaymodi993@gmail.com</a>
-          </p>
-          <p>
-            <strong>Address:</strong> Mundra, Gujarat, India
-          </p>
+          <span className="availability-dot">Available for work</span>
+          <p>Currently open for opportunities, freelance work, and project collaborations.</p>
+          <a href="mailto:jaymodi993@gmail.com" className="mail-link">jaymodi993@gmail.com</a>
+          <p>Mundra, Gujarat, India</p>
+          <div className="mini-socials">
+            {socialLinks.map((item) => (
+              <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" aria-label={item.label}>
+                {item.icon}
+              </a>
+            ))}
+          </div>
         </div>
         <form className="contact-form" onSubmit={sendEmail}>
-          <h4>Message</h4>
-          <input type="text" name="name" placeholder="Name" required aria-label="Name" />
-          <input type="email" name="email" placeholder="Email" required aria-label="Email" />
-          <input type="text" name="subject" placeholder="Subject" aria-label="Subject" />
-          <textarea name="message" placeholder="Message" aria-label="Message" required />
-          <button type="submit">Send Message</button>
+          <label>
+            <span>Your Name</span>
+            <input type="text" name="name" placeholder="Jay Modi" required autoComplete="name" />
+          </label>
+          <label>
+            <span>Your Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required autoComplete="email" />
+          </label>
+          <label>
+            <span>Subject</span>
+            <input type="text" name="subject" placeholder="Project / opportunity" />
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" placeholder="Tell me about your project..." required />
+          </label>
+          <button type="submit" disabled={isSending}>{isSending ? 'Sending...' : 'Send Message'}</button>
+          {status.message ? <p className={`form-status ${status.type}`}>{status.message}</p> : null}
         </form>
       </div>
     </section>
