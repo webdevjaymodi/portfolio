@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+<<<<<<< HEAD
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
@@ -7,4 +8,8 @@
     "jsx": "preserve"
   },
   "exclude": ["node_modules", ".next"]
+=======
+    "baseUrl": "."
+  }
+>>>>>>> main
 }
