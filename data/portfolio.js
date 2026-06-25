@@ -124,6 +124,14 @@ export const experiences = [
       'Developed a Hotel Guest Management System using React.js, including check-in, check-out, booking updates, and hotel operation workflows. This development experience supports stronger QA analysis.',
     highlights: ['React.js', 'JavaScript', 'Frontend Workflow', 'Requirement Understanding'],
   },
+  {
+    title: 'Diploma in Engineering',
+    period: '2019 - 2022',
+    meta: 'Computer Engineering',
+    description: 'Tolani F. G. Polytechnic, Adipur',
+    image: '/img/t.jpeg',
+    imageAlt: 'Tolani F. G. Polytechnic Logo',
+  },
 ];
 
 export const services = [
