@@ -1,9 +1,14 @@
 {
   "compilerOptions": {
+<<<<<<< HEAD
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
     }
   },
   "exclude": ["node_modules", ".next", "out"]
+=======
+    "baseUrl": "."
+  }
+>>>>>>> main
 }
