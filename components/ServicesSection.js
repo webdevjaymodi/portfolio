@@ -1,10 +1,12 @@
-import { services } from '../data/portfolio';
+import { services as portfolioServices } from '../data/portfolio';
 import SectionHeading from './SectionHeading';
+
+const services = portfolioServices || [];
 
 export default function ServicesSection() {
   return (
     <section id="service">
-      <SectionHeading eyebrow="What I Provide" title="Services" />
+      <SectionHeading eyebrow="Focus Areas" title="What I Can Help With" />
       <div className="service-content">
         {services.map((service, index) => (
           <article className="service-item" key={service.title}>

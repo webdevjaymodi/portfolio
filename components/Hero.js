@@ -2,7 +2,10 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { stats, typedWords } from '../data/portfolio';
+import { stats as portfolioStats, typedWords as portfolioTypedWords } from '../data/portfolio';
+
+const stats = portfolioStats || [];
+const typedWords = portfolioTypedWords || ['QA Tester'];
 
 export default function Hero() {
   const [typedText, setTypedText] = useState('');
@@ -50,17 +53,18 @@ export default function Hero() {
     >
       <div className="home-content">
         <div className="home-text">
-          <p className="hero-kicker">Software Enthusiast</p>
+          <p className="hero-kicker">QA Tester • Software Support Engineer</p>
           <h1>Jay Modi</h1>
           <h2>
-            I build polished digital experiences as a <span id="element">{typedText}</span>
+            Focused on <span id="element">{typedText}</span>
           </h2>
           <p className="hero-copy">
-            Passionate computer engineer from Gujarat focused on responsive web apps, practical
-            full-stack systems, and clean user experiences that turn ideas into working products.
+            QA-focused Software Support Engineer from Ahmedabad, Gujarat with knowledge of manual
+            testing, software testing, technical support, requirement understanding, SQL, web testing,
+            database testing, API testing, and basic web development.
           </p>
           <div className="social-links">
-            <a href="#project">View My Work</a>
+            <a href="#experience">View Experience</a>
             <a href="https://drive.google.com/file/d/1vEZaegPyb2rUV_1pmDj2_KbG1LLEnEmo/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               Download CV
             </a>
@@ -70,10 +74,10 @@ export default function Hero() {
         <div className="home-img" aria-label="Jay Modi profile highlight">
           <div className="orb orb-one" />
           <div className="orb orb-two" />
-          <Image src="/img/my.jpg" alt="Jay Modi - Web Developer" width={390} height={390} className="floating-img" priority />
-          <div className="tech-badge badge-one">React</div>
+          <Image src="/img/my.jpg" alt="Jay Modi - QA Tester and Software Support Engineer" width={390} height={390} className="floating-img" priority />
+          <div className="tech-badge badge-one">Manual Testing</div>
           <div className="tech-badge badge-two">SQL</div>
-          <div className="tech-badge badge-three">.NET</div>
+          <div className="tech-badge badge-three">Support</div>
         </div>
       </div>
       <div className="stats-grid">

@@ -1,12 +1,14 @@
 import Image from 'next/image';
-import { projects } from '../data/portfolio';
+import { projects as portfolioProjects } from '../data/portfolio';
 import SectionHeading from './SectionHeading';
+
+const projects = portfolioProjects || [];
 
 export default function ProjectsSection() {
   return (
     <section id="project">
-      <SectionHeading eyebrow="Featured Projects" title="Selected Work">
-        Personal and academic applications showcasing database design, user flows, and clean interfaces.
+      <SectionHeading eyebrow="Project Work" title="Testing-oriented Projects">
+        Projects that show my understanding of real-world workflows, requirements, databases, frontend behavior, and QA thinking.
       </SectionHeading>
       <div className="project-content">
         {projects.map((project) => (
@@ -16,7 +18,7 @@ export default function ProjectsSection() {
               <span className="project-date">{project.date}</span>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
-              <div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+              <div className="tag-row">{(project.tags || []).map((tag) => <span key={tag}>{tag}</span>)}</div>
             </div>
           </article>
         ))}

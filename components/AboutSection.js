@@ -3,23 +3,29 @@ import SectionHeading from './SectionHeading';
 export default function AboutSection() {
   return (
     <section id="aboutme" className="about-section">
-      <SectionHeading eyebrow="Who Am I" title="Designing logic. Shaping experiences." />
+      <SectionHeading eyebrow="Professional Profile" title="QA testing and software support focused." />
       <div className="about-content split-card">
         <div>
           <p>
-            Hello! I&apos;m Jay Modi, a passionate web developer eager to grow in the ever-evolving
-            world of technology. I enjoy building practical, responsive interfaces and learning how
-            thoughtful code can solve real user problems.
+            I am Jay Modi, a QA Tester and Software Support Engineer focused on Manual Testing,
+            Software Testing, Quality Assurance, Technical Support, Requirement Understanding,
+            Client Communication, Issue Analysis, Troubleshooting, and Application Support.
           </p>
           <p>
-            My journey started with a college Hospital Management System project. Since then, I have
-            continued sharpening my skills in HTML, CSS, JavaScript, Bootstrap, SQL, ASP.NET, and .NET.
+            Currently, I work as a Software Support Engineer at Sapphire Software Solutions, where I
+            handle software support, client guidance, requirement understanding, issue analysis,
+            troubleshooting, software quality support, and real user problem solving.
+          </p>
+          <p>
+            My development knowledge in HTML5, CSS, JavaScript, React.js, ASP.NET Core, SQL, MySQL,
+            Microsoft SQL Server, Postman API, GitHub, and REST APIs supports my testing career by
+            helping me understand how applications are built and how issues can be analyzed better.
           </p>
         </div>
         <div className="about-callout">
-          <span>Currently focused on</span>
-          <strong>Clean UI, strong fundamentals, and full-stack project building.</strong>
-          <a href="#contact">Let&apos;s Talk</a>
+          <span>Career Direction</span>
+          <strong>QA Testing + Software Support main, development knowledge secondary.</strong>
+          <a href="#contact">Hire / Connect</a>
         </div>
       </div>
     </section>

@@ -2,7 +2,9 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { navLinks } from '../data/portfolio';
+import { navLinks as portfolioNavLinks } from '../data/portfolio';
+
+const navLinks = portfolioNavLinks || [];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

@@ -1,10 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { socialLinks } from '../data/portfolio';
+import { socialLinks as portfolioSocialLinks } from '../data/portfolio';
 import SectionHeading from './SectionHeading';
 
 const initialStatus = { type: '', message: '' };
+const socialLinks = portfolioSocialLinks || [];
 
 export default function ContactSection() {
   const [status, setStatus] = useState(initialStatus);
@@ -56,14 +57,14 @@ export default function ContactSection() {
   return (
     <section id="contact">
       <SectionHeading eyebrow="Get In Touch" title="Let's build something useful">
-        Fill the form and it will send directly to my inbox after Vercel email variables are added.
+        Open to QA Tester, Manual Tester, Software Support, Technical Support, Application Support, and Junior QA Engineer opportunities.
       </SectionHeading>
       <div className="contact-content interactive-card">
         <div className="contact-info">
           <span className="availability-dot">Available for work</span>
-          <p>Currently open for opportunities, freelance work, and project collaborations.</p>
+          <p>Currently open for QA Testing, Manual Testing, Software Support, Technical Support, Application Support, and Junior QA Engineer opportunities.</p>
           <a href="mailto:jaymodi993@gmail.com" className="mail-link">jaymodi993@gmail.com</a>
-          <p>Mundra, Gujarat, India</p>
+          <p>Ahmedabad, Gujarat, India</p>
           <div className="mini-socials">
             {socialLinks.map((item) => (
               <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" aria-label={item.label}>
@@ -83,11 +84,11 @@ export default function ContactSection() {
           </label>
           <label>
             <span>Subject</span>
-            <input type="text" name="subject" placeholder="Project / opportunity" />
+            <input type="text" name="subject" placeholder="QA / Support opportunity" />
           </label>
           <label>
             <span>Message</span>
-            <textarea name="message" placeholder="Tell me about your project..." required />
+            <textarea name="message" placeholder="Tell me about the role, issue, or opportunity..." required />
           </label>
           <button type="submit" disabled={isSending}>{isSending ? 'Sending...' : 'Send Message'}</button>
           {status.message ? <p className={`form-status ${status.type}`}>{status.message}</p> : null}

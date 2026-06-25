@@ -1,5 +1,8 @@
 import Image from 'next/image';
-import { navLinks, socialLinks } from '../data/portfolio';
+import { navLinks as portfolioNavLinks, socialLinks as portfolioSocialLinks } from '../data/portfolio';
+
+const navLinks = portfolioNavLinks || [];
+const socialLinks = portfolioSocialLinks || [];
 
 export default function Footer() {
   return (
