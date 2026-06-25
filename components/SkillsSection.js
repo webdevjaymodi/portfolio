@@ -1,48 +1,22 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { skills } from '../data/portfolio';
+import { skillGroups } from '../data/portfolio';
 import SectionHeading from './SectionHeading';
 
 export default function SkillsSection() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const skillSection = document.getElementById('skill');
-    if (!skillSection) {
-      return undefined;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 },
-    );
-
-    observer.observe(skillSection);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section id="skill">
-      <SectionHeading eyebrow="What I Know" title="My Skill" />
-      <div className="skill-content">
-        {skills.map((skill) => (
-          <div className="skill-bar" key={skill.name}>
-            <span>{skill.name}</span>
-            <div className="bar">
-              <div
-                className="skill-fill"
-                style={{ width: isVisible ? skill.level : 0, opacity: isVisible ? 1 : 0 }}
-              >
-                {skill.level}
-              </div>
+      <SectionHeading eyebrow="Recruiter Keywords" title="QA, Support & Technical Skills">
+        My primary focus is testing and software support, with development knowledge used to analyze applications more effectively.
+      </SectionHeading>
+      <div className="skill-groups">
+        {skillGroups.map((group) => (
+          <article className="skill-group interactive-card" key={group.title}>
+            <h3>{group.title}</h3>
+            <div className="skill-cloud">
+              {group.items.map((skill) => (
+                <span className="skill-pill" key={skill}>{skill}</span>
+              ))}
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>

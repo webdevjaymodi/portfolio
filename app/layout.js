@@ -1,20 +1,25 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Jay Modi - Web Developer Portfolio | Gujarat, India',
+  title: 'Jay Modi - QA Tester & Software Support Engineer | Ahmedabad, Gujarat',
   description:
-    'Portfolio of Jay Modi, a passionate Web Developer and Full Stack Programmer based in Mundra, Gujarat. Specializing in HTML, CSS, JavaScript, ASP.NET, and SQL.',
+    'Portfolio of Jay Modi, a QA Tester and Software Support Engineer based in Ahmedabad, Gujarat. Focused on Manual Testing, Software Testing, Technical Support, Requirement Understanding, SQL, Web Testing, Database Testing, API Testing, and basic Web Development.',
   keywords: [
     'Jay Modi',
-    'Web Developer',
+    'QA Tester',
+    'Manual Testing',
+    'Software Testing',
+    'Software Support Engineer',
+    'Technical Support',
+    'Requirement Understanding',
+    'SQL',
+    'Web Testing',
+    'Database Testing',
+    'API Testing',
     'Portfolio',
+    'Ahmedabad',
     'Gujarat',
     'India',
-    'Full Stack Developer',
-    'ASP.NET',
-    'JavaScript',
-    'Freelancer',
-    'Programmer',
   ],
   authors: [{ name: 'Jay Modi' }],
   robots: 'index, follow',
@@ -24,9 +29,9 @@ export const metadata = {
   openGraph: {
     type: 'website',
     url: 'https://jaymodi-portfolio.netlify.app/',
-    title: 'Jay Modi - Web Developer Portfolio',
+    title: 'Jay Modi - QA Tester & Software Support Engineer',
     description:
-      'Hire Jay Modi - A passionate Web Developer specializing in creating seamless user experiences.',
+      'Hire Jay Modi - QA-focused Software Support Engineer with Manual Testing, Software Testing, Technical Support, SQL, Web Testing, Database Testing, and API Testing knowledge.',
     images: [
       {
         url: 'https://jaymodi-portfolio.netlify.app/img/Jay\'s%20Portfolio_transparent.png',

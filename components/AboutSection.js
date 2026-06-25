@@ -2,28 +2,31 @@ import SectionHeading from './SectionHeading';
 
 export default function AboutSection() {
   return (
-    <section id="aboutme">
-      <SectionHeading eyebrow="Who Am I" title="About Me" />
-      <div className="about-content">
-        <p>
-          Hello! I&apos;m Jay Modi, a passionate web developer eager to embark on a journey in the
-          ever-evolving world of technology. With a fresh perspective and a hunger to learn, I am
-          excited to contribute my skills and creativity to innovative projects.
-          <br />
-          <br />
-          My fascination with web development began from college, where I made a project on a hospital
-          management system. Since then, I&apos;ve been on a quest to expand my knowledge and refine my
-          craft. I have hands-on experience with HTML, CSS, JavaScript, and have dabbled in various
-          frameworks and libraries like Bootstrap.
-          <br />
-          <br />
-          What truly drives me is the opportunity to solve problems and create seamless user
-          experiences. I thrive in collaborative environments, where I can brainstorm ideas and turn
-          them into tangible solutions.
-          <br />
-          <br />
-          Thank you for visiting my portfolio, and I look forward to connecting with you!
-        </p>
+    <section id="aboutme" className="about-section">
+      <SectionHeading eyebrow="Professional Profile" title="QA testing and software support focused." />
+      <div className="about-content split-card">
+        <div>
+          <p>
+            I am Jay Modi, a QA Tester and Software Support Engineer focused on Manual Testing,
+            Software Testing, Quality Assurance, Technical Support, Requirement Understanding,
+            Client Communication, Issue Analysis, Troubleshooting, and Application Support.
+          </p>
+          <p>
+            Currently, I work as a Software Support Engineer at Sapphire Software Solutions, where I
+            handle software support, client guidance, requirement understanding, issue analysis,
+            troubleshooting, software quality support, and real user problem solving.
+          </p>
+          <p>
+            My development knowledge in HTML5, CSS, JavaScript, React.js, ASP.NET Core, SQL, MySQL,
+            Microsoft SQL Server, Postman API, GitHub, and REST APIs supports my testing career by
+            helping me understand how applications are built and how issues can be analyzed better.
+          </p>
+        </div>
+        <div className="about-callout">
+          <span>Career Direction</span>
+          <strong>QA Testing + Software Support main, development knowledge secondary.</strong>
+          <a href="#contact">Hire / Connect</a>
+        </div>
       </div>
     </section>
   );
