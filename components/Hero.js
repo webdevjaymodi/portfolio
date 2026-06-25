@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { typedWords } from '@/data/portfolio';
+import { typedWords } from '../data/portfolio';
 
 export default function Hero() {
   const [typedText, setTypedText] = useState('');

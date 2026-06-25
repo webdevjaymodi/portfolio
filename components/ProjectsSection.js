@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { projects } from '@/data/portfolio';
+import { projects } from '../data/portfolio';
 import SectionHeading from './SectionHeading';
 
 export default function ProjectsSection() {

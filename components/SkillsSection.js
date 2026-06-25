@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { skills } from '@/data/portfolio';
+import { skills } from '../data/portfolio';
 import SectionHeading from './SectionHeading';
 
 export default function SkillsSection() {

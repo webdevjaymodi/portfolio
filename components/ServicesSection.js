@@ -1,4 +1,4 @@
-import { services } from '@/data/portfolio';
+import { services } from '../data/portfolio';
 import SectionHeading from './SectionHeading';
 
 export default function ServicesSection() {

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { education } from '@/data/portfolio';
+import { education } from '../data/portfolio';
 import SectionHeading from './SectionHeading';
 
 export default function EducationSection() {

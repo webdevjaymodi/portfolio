@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { navLinks, socialLinks } from '@/data/portfolio';
+import { navLinks, socialLinks } from '../data/portfolio';
 
 export default function Footer() {
   return (
