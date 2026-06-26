@@ -142,31 +142,42 @@ export const services = [
 
 export const projects = [
   {
-    title: 'Hospital Management System / Hospital ERP System',
+    title: 'Trendify',
+    date: 'March 2025 - Present',
+    description:
+      'A comprehensive TypeScript application built on GitHub. Features include modern architecture, automated workflows, and robust frontend state management.',
+    image: '/img/project-trendify.jpg',
+    imageAlt: 'Trendify Project Dashboard',
+    tags: ['TypeScript', 'GitHub', 'Frontend Development'],
+    link: 'https://github.com/jaymodi993/Trendify',
+  },
+  {
+    title: 'Hospital Management / ERP System',
     date: 'Academic Project',
     description:
       'A business workflow project for patient, doctor, appointment, database, and module management. From a QA perspective, it supports testing forms, records, modules, user actions, and SQL-backed workflows.',
-    image: '/img/project-placeholder.png',
-    imageAlt: 'Hospital Management System project preview',
-    tags: ['Manual Testing', 'Web Testing', 'Database Testing', 'SQL', 'Requirement Understanding'],
+    image: '/img/project-hospital.jpg',
+    imageAlt: 'Hospital Management System Dashboard',
+    tags: ['Manual Testing', 'Web Testing', 'Database Testing', 'SQL'],
   },
   {
     title: 'Hotel Guest Management System',
     date: 'Internship Project',
     description:
       'A React.js application for guest check-in, check-out, booking updates, and hotel operation management. The project strengthened frontend workflow understanding and user-focused testing thinking.',
-    image: '/img/project-placeholder.png',
-    imageAlt: 'Hotel Guest Management System project preview',
-    tags: ['React.js', 'JavaScript', 'Functional Testing', 'Web Testing'],
+    image: '/img/project-hotel.jpg',
+    imageAlt: 'Hotel Guest Management System UI',
+    tags: ['React.js', 'JavaScript', 'Functional Testing'],
   },
   {
-    title: 'Portfolio Website',
-    date: 'Personal Project',
+    title: 'GitHub Introduction Skills',
+    date: 'April 2025',
     description:
-      'A responsive portfolio website built to present QA testing, software support, technical skills, projects, education, and professional growth.',
-    image: '/img/project-placeholder.png',
-    imageAlt: 'Portfolio Website project preview',
-    tags: ['HTML5', 'CSS', 'JavaScript', 'Responsive Design'],
+      'A personal repository demonstrating continuous learning in GitHub version control, collaboration, and repository management.',
+    image: '/img/project-github.jpg',
+    imageAlt: 'GitHub Skills Repository',
+    tags: ['Git', 'Version Control', 'Learning'],
+    link: 'https://github.com/jaymodi993/skills-introduction-to-github1',
   },
 ];
 

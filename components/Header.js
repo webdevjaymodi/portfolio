@@ -8,23 +8,19 @@ const navLinks = portfolioNavLinks || [];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
 
   useEffect(() => {
-    setIsDarkTheme(window.localStorage.getItem('theme') === 'dark');
+    const saved = window.localStorage.getItem('theme');
+    if (saved === 'light') {
+      setIsDarkTheme(false);
+    }
   }, []);
 
   useEffect(() => {
-    document.documentElement.dataset.theme = isDarkTheme ? 'dark' : '';
-    document.body.dataset.theme = isDarkTheme ? 'dark' : '';
-
-    if (isDarkTheme) {
-      window.localStorage.setItem('theme', 'dark');
-    } else {
-      window.localStorage.removeItem('theme');
-      delete document.documentElement.dataset.theme;
-      delete document.body.dataset.theme;
-    }
+    document.documentElement.dataset.theme = isDarkTheme ? 'dark' : 'light';
+    document.body.dataset.theme = isDarkTheme ? 'dark' : 'light';
+    window.localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
   }, [isDarkTheme]);
 
   function closeMenu() {
@@ -37,11 +33,12 @@ export default function Header() {
         <div className="logo">
           <a href="#home" onClick={closeMenu}>
             <Image
-              src="/img/Jay's Portfolio_transparent.png"
+              src="/img/jm-logo.jpg"
               alt="Jay's Portfolio Logo"
-              width={170}
-              height={60}
+              width={140}
+              height={50}
               priority
+              style={{ borderRadius: '8px' }}
             />
           </a>
         </div>
